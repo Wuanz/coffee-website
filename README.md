@@ -13,6 +13,7 @@ Link video demo bài : https://drive.google.com/file/d/1IzvUkY9HdHcKa-34BvB4dWmm
 USER:
 - Được quyền vào trang home, menu, shop, cart, login, sign up 
 - Không được vào trang xem thông tin tài khoản, nhân viên
+
 ADMIN:
 - Có đặc quyền cao nhất
 - Ngoài ra được vào trang quản lý tài khoản và sản phẩm 
