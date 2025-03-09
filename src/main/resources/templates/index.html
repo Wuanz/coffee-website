@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Document</title>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{/}">
+        <img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="auto" height="70"
+             class="d-inline-block align-top" alt=""/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/}" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/shop}" href="#">Shop</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cart</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="jumbotron text-center"id="my-custom-id">
+    <h1 class="display-4">Welcome </h1>
+    <p>Take a trip to the Coffee Store</p>
+    <form th:action="@{/users/add}">
+        <button type="submit" class="btn btn-primary">Manage your Account</button>
+    </form>
+</div>
+<section class="home">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 pic-area">
+                <div class="pic-area-text">
+                    <h1 class="display-4">
+                        <span class="logo-first">Coffee</span> <span class="logo-last">Shop</span>
+                    </h1>
+                    <p class="lead mb-4">Premium coffee and cozy ambiance, harmoniously combined.</p>
+                    <a th:href="@{/shop}" href="#" class="btn btn-primary btn-lg">Order Now!</a>
+                </div>
+            </div>
+            <div class="col-md-6 main-area">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h2>Who We Are</h2>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">51900806 - Doan Hoang Gia Khiem</li>
+                                    <li class="list-group-item">51900544 - Ha Minh Quan</li>
+                                    <li class="list-group-item">51900821 - Ho Thinh Phat</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h2>Our Services</h2>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">We offer exceptional coffee and a comfortable atmosphere with utmost respect for our customers. We also host events like karaoke nights, birthday parties, and game nights, and provide free round-the-clock parking for your convenience.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h2>Menu</h2>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">At our coffee shop, we're confident that our menu offers the ideal cup of coffee to jumpstart your day. Whether you're a fan of the traditional Caffè Americano, crave one of our four distinct Roast variations, or prefer the bold taste of Espresso, we've got you covered. With every sip, you can relish the flavor while receiving the energy boost you need to take on the day ahead.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2>About Our Coffee Shop</h2>
+                    </div>
+                    <div class="card-body">
+                        <img th:src="@{/images/about_coffee.jpg}" src="../static/images/about_coffee.jpg" alt="Coffee shop image"
+                             class="img-fluid mb-4"/>
+                        <p class="card-text">Welcome to our coffee shop! We are dedicated to providing our customers with the highest quality coffee and a warm, inviting atmosphere. Our beans are carefully selected and roasted to perfection, ensuring that each cup of coffee is bursting with flavor. We pride ourselves on our friendly, knowledgeable staff who are always happy to help you find the perfect cup of coffee for your taste.</p>
+                        <p class="card-text">In addition to our delicious coffee, we offer a variety of other beverages, including tea, hot chocolate, and smoothies. We also have a selection of pastries and sandwiches to satisfy your hunger. Whether you're stopping by for a quick cup of coffee on your way to work or settling in for a relaxing afternoon, we have everything you need to make your visit unforgettable.</p>
+                        <p class="card-text">Thank you for choosing our coffee shop, we can't wait to serve you!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="mt-5">
+            <div class="row">
+                <div class="col-12 icons text-center mb-3">
+                    <a href="#!"><i class="fab fa-twitter fa-lg mr-3"></i></a>
+                    <a href="#!"><i class="fab fa-facebook fa-lg mr-3"></i></a>
+                    <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
+                <div class="col-12 text-center">
+                    <p>© Do an cong nghe Java</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</section>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
